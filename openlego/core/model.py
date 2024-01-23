@@ -39,7 +39,7 @@ from typing import Union, Optional, List, Any, Dict, Tuple
 
 from openmdao.api import Group, IndepVarComp, LinearBlockGS, NonlinearBlockGS, LinearBlockJac, \
     NonlinearBlockJac, LinearRunOnce, NonlinearRunOnce, DirectSolver, \
-    MetaModelUnStructuredComp, FloatKrigingSurrogate, ResponseSurface, ExplicitComponent
+    MetaModelUnStructuredComp, ResponseSurface, ExplicitComponent #, FloatKrigingSurrogate
 from openmdao.utils.general_utils import format_as_float_or_array, determine_adder_scaler
 from openmdao import INF_BOUND as INF_BOUND
 
