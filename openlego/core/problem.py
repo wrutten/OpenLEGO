@@ -338,7 +338,7 @@ class LEGOProblem(CMDOWSObject, Problem):
             open_in_browser : bool
                 Setting whether to attempt to automatically open the model view in the browser.
         """
-        if self._setup_status == 0:
+        if self._metadata is None or self._metadata['setup_status'] < _SetupStatus.POST_SETUP:
             self.setup()
         n2(self, outfile=self.model_view_path, show_browser=open_in_browser)
 
@@ -348,7 +348,7 @@ class LEGOProblem(CMDOWSObject, Problem):
         self.driver.add_recorder(SqliteRecorder(self.case_reader_path))
         self.driver.recording_options['includes'] = ['*']
         self.driver.recording_options['record_model_metadata'] = True
-        if self._setup_status == 0:
+        if self._metadata is None or self._metadata['setup_status'] < _SetupStatus.POST_SETUP:
             self.setup()
 
     def initialize_from_xml(self, xml):
