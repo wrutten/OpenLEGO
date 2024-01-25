@@ -39,7 +39,7 @@ from typing import Union, Optional, List, Any, Dict, Tuple
 
 from openmdao.api import Group, IndepVarComp, LinearBlockGS, NonlinearBlockGS, LinearBlockJac, \
     NonlinearBlockJac, LinearRunOnce, NonlinearRunOnce, DirectSolver, \
-    MetaModelUnStructuredComp, ResponseSurface, ExplicitComponent #, FloatKrigingSurrogate
+    MetaModelUnStructuredComp, ResponseSurface, ExplicitComponent, KrigingSurrogate
 from openmdao.utils.general_utils import format_as_float_or_array, determine_adder_scaler
 from openmdao import INF_BOUND as INF_BOUND
 
@@ -235,7 +235,7 @@ class LEGOModel(CMDOWSObject, Group):
                 fitting_method = get_surrogate_model_setting_safe(surrogate_model, 'fittingMethod',
                                                                   'ResponseSurface')
                 if fitting_method == 'Kriging':
-                    component = MetaModelUnStructuredComp(default_surrogate=FloatKrigingSurrogate())
+                    component = MetaModelUnStructuredComp(default_surrogate=KrigingSurrogate())
                 elif fitting_method == 'ResponseSurface':
                     component = MetaModelUnStructuredComp(default_surrogate=ResponseSurface())
                 else:
