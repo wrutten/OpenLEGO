@@ -31,7 +31,7 @@ from typing import Any, Optional
 from cached_property import cached_property
 
 from openlego.utils.xml_utils import xpath_to_param
-from .discipline_resolver import DisciplineResolver
+from openlego.core.discipline_resolver import DisciplineResolver
 
 
 class InvalidCMDOWSFileError(ValueError):

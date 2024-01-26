@@ -32,6 +32,7 @@ from openmdao.api import Problem, ScipyOptimizeDriver, DOEDriver, UniformGenerat
     FullFactorialGenerator, BoxBehnkenGenerator, LatinHypercubeGenerator, ListGenerator, \
     n2, SqliteRecorder, CaseReader
 from openmdao.core.driver import Driver
+from openmdao.core.constants import _SetupStatus
 
 from openlego.core.model import LEGOModel
 from openlego.core.cmdows import CMDOWSObject
