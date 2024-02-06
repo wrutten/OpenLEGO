@@ -96,12 +96,8 @@ class LEGOProblem(CMDOWSObject, Problem):
         else:
             self.output_case_string = os.path.splitext(os.path.basename(cmdows_path))[0] + '_' + \
                                       datetime.datetime.now().strftime("%Y%m%d_%H%M%S%f")[:-4]
-        
-        # initialize openmdao problem with driver from cmdows file
-            #might run into issues here with **kwargs, as both classes might not accept all
-        CMDOWSObject.__init__(self,cmdows_path, kb_path, driver_uid, data_folder,
+        super(LEGOProblem, self).__init__(cmdows_path, kb_path, driver_uid, data_folder,
                                           base_xml_file, **kwargs)
-        Problem.__init__(self, driver=self.get_driver, **kwargs) 
 
     def __setattr__(self, name, value):
         # type: (str, Any) -> None
@@ -185,7 +181,7 @@ class LEGOProblem(CMDOWSObject, Problem):
         )
 
     @cached_property
-    def get_driver(self): #rephrase as config_driver?
+    def driver(self):
         # type: () -> Driver
         """Method to return a preconfigured driver.
 
