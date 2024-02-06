@@ -20,7 +20,7 @@ This file contains the definition of the test case for the cached property funct
 from __future__ import absolute_import, division, print_function
 
 import unittest
-from cached_property import cached_property
+from functools import cached_property
 
 
 class SimpleCachedPropertyClass(object):

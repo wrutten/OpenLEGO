@@ -30,7 +30,7 @@ except ImportError:
 from numbers import Integral
 
 import numpy as np
-from cached_property import cached_property
+from functools import cached_property
 from lxml import etree
 from lxml.etree import _Element, _ElementTree
 

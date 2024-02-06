@@ -19,7 +19,7 @@ This file contains the definition of the `LEGOProblem` class.
 """
 from __future__ import absolute_import, division, print_function
 
-from cached_property import cached_property
+from functools import cached_property
 import datetime
 from lxml.etree import _Element, _ElementTree
 import os

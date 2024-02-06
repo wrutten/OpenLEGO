@@ -25,7 +25,7 @@ import os
 from typing import Optional
 
 from six import string_types
-from cached_property import cached_property
+from functools import cached_property
 
 from openlego.partials.partials import Partials
 

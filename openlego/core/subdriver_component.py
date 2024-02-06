@@ -20,7 +20,7 @@ This file contains the definition the `SubDriverComponent` class.
 import os
 
 import numpy as np
-from cached_property import cached_property
+from functools import cached_property
 
 from openmdao.api import ExplicitComponent, CaseReader
 from openmdao.recorders.sqlite_recorder import SqliteRecorder

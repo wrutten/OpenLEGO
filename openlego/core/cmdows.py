@@ -28,7 +28,7 @@ from typing import Dict, List, Union
 from openlego.utils.cmdows_utils import get_loop_nesting_obj, get_element_by_uid, \
     get_doe_setting_safe
 from typing import Any, Optional
-from cached_property import cached_property
+from functools import cached_property
 
 from openlego.utils.xml_utils import xpath_to_param
 from openlego.core.discipline_resolver import DisciplineResolver
