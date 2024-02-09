@@ -125,6 +125,14 @@ class LEGOProblem(CMDOWSObject, Problem):
         # Invalidate the problem
         super(LEGOProblem, self).invalidate()
 
+    def setup(self):
+        # type: () -> None
+        """First set problem-driver coupling before running Problem.setup()
+        """
+        self._update_reports(self.driver)
+        self._driver = self.driver
+        super(LEGOProblem, self).setup()
+
     @cached_property
     def case_reader_path(self):
         # type: () -> str
