@@ -105,19 +105,19 @@ def run_openlego(analyze_mdao_definitions, cmdows_dir=None, initial_file_path=No
         if run_type == 'test':
             # 5. Collect test results for test assertions
             if '/dataSchema/variables/x0' in prob.model._outputs:
-                x = [prob['/dataSchema/variables/x0']]
-                y = [prob['/dataSchema/analyses/y1'], prob['/dataSchema/analyses/y2']]
-                z = [prob['/dataSchema/variables/z1'], prob['/dataSchema/variables/z2']]
-                f = [prob['/dataSchema/analyses/f']]
-                g = [prob['/dataSchema/analyses/g1'], prob['/dataSchema/analyses/g2']]
+                x = [prob['/dataSchema/variables/x0'][0]]
+                y = [prob['/dataSchema/analyses/y1'][0], prob['/dataSchema/analyses/y2'][0]]
+                z = [prob['/dataSchema/variables/z1'][0], prob['/dataSchema/variables/z2'][0]]
+                f = [prob['/dataSchema/analyses/f'][0]]
+                g = [prob['/dataSchema/analyses/g1'][0], prob['/dataSchema/analyses/g2'][0]]
             elif '/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/variables/x0' in prob.model._outputs:
-                x = [prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/variables/x0']]
-                y = [prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/analyses/y1'],
-                     prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/analyses/y2']]
-                z = [prob['/dataSchema/variables/z1'], prob['/dataSchema/variables/z2']]
-                f = [prob['/dataSchema/analyses/f']]
-                g = [prob.model.SubOptimizer0.prob['/dataSchema/analyses/g1'],
-                     prob.model.SubOptimizer1.prob['/dataSchema/analyses/g2']]
+                x = [prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/variables/x0'][0]]
+                y = [prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/analyses/y1'][0],
+                     prob['/dataSchema/architectureNodes/copyDesignVariables/dataSchemaCopy/analyses/y2'][0]]
+                z = [prob['/dataSchema/variables/z1'][0], prob['/dataSchema/variables/z2'][0]]
+                f = [prob['/dataSchema/analyses/f'][0]]
+                g = [prob.model.SubOptimizer0.prob['/dataSchema/analyses/g1'][0],
+                     prob.model.SubOptimizer1.prob['/dataSchema/analyses/g2'][0]]
 
             # 6. Cleanup and invalidate the Problem afterwards
             prob.invalidate()

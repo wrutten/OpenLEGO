@@ -67,11 +67,11 @@ def run_openlego(cmdows_file, data_folder=None, driver_debug_print=False, discip
     prob.collect_results()
 
     # 5. Collect test results for test assertions
-    x = [prob['/dataSchema/variables/x1']]
-    y = [prob['/dataSchema/analyses/y1'], prob['/dataSchema/analyses/y2']]
-    z = [prob['/dataSchema/variables/z1'], prob['/dataSchema/variables/z2']]
-    f = [prob['/dataSchema/output/f']]
-    g = [prob['/dataSchema/output/g1'], prob['/dataSchema/output/g2']]
+    x = [prob['/dataSchema/variables/x1'][0]]
+    y = [prob['/dataSchema/analyses/y1'][0], prob['/dataSchema/analyses/y2'][0]]
+    z = [prob['/dataSchema/variables/z1'][0], prob['/dataSchema/variables/z2'][0]]
+    f = [prob['/dataSchema/output/f'][0]]
+    g = [prob['/dataSchema/output/g1'][0], prob['/dataSchema/output/g2'][0]]
 
     # 6. Cleanup and invalidate the Problem afterwards
     prob.invalidate()
