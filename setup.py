@@ -54,7 +54,7 @@ setup(
     package_data={'openlego.partials': ['partials.xsd']},
     install_requires=[
         'openmdao>=2.6.0',
-        'openmdao<=3.30.0'
+        'openmdao<=3.30.0',
         'lxml',
         'numpy',
         'cached-property',
